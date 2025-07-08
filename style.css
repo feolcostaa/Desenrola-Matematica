@@ -1,0 +1,235 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9fafb;
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #1E3A8A;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+header.scrolled {
+    padding: 10px 24px;
+    background-color: #3B82F6;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 60px;
+    transition: height 0.3s;
+    
+}
+
+header.scrolled .logo img {
+    height: 60px; 
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* espaçamento entre os botões */
+}
+
+.register-btn {
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    color: #1E3A8A;
+    border: none;
+    font-size: 16px;
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.content-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.login-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.login-btn .material-icons {
+    font-size: 20px;
+    vertical-align: middle;
+    margin-right: 6px;
+    margin-left: -2px;
+}
+
+/* Conteúdo */
+main {
+    padding-top: 100px;
+}
+
+
+.content {
+    height: 1500px; /* para simular rolagem */
+}
+
+/* Hero section */
+.hero {
+    margin-top: 20px;
+  width: 100%;
+  padding: 24px 24px;
+  background-color: #1E3A8A;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-btn {
+  background-color: #FACC15;
+  color: #1E3A8A;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #fcd34d;
+}
+
+.cta-btn.grande {
+  font-size: 1.1rem;
+  padding: 14px 28px;
+}
+
+/* Recursos */
+.recursos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 60px 24px;
+  background-color: #f1f5f9;
+}
+
+.card {
+  background-color: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  max-width: 300px;
+  flex: 1;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  color: #1E3A8A;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+/* Sobre */
+.sobre {
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.sobre h2 {
+  font-size: 2rem;
+  color: #1E3A8A;
+  margin-bottom: 16px;
+}
+
+.sobre p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #374151;
+  font-size: 1rem;
+}
+
+/* CTA final */
+.cta-final {
+  text-align: center;
+  padding: 60px 24px;
+  background-color: #1E3A8A;
+  color: white;
+}
+
+.cta-final h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+    .header-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        height: 48px;
+    }
+}
