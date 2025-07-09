@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Desenrola Matemática</title>
-    <meta name="description" content="Desenrola Matemática é um projeto para ajudar você a dominar os conceitos de matemática de forma clara e descomplicada. Role a página e comece sua jornada!">
-
-    <!-- Favicon -->
+    <meta name="description"
+        content="Desenrola Matemática é um projeto para ajudar você a dominar os conceitos de matemática de forma clara e descomplicada. Role a página e comece sua jornada!">
     <link rel="icon" type="image/png" href="images/icon.png" />
-
-    <!-- Fontes e ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
-    <!-- HEADER -->
+<body>
     <header id="main-header">
         <div class="logo">
             <img id="logo-img" src="images/logo-branca.png" alt="Logo Desenrola Matemática" />
@@ -33,46 +28,64 @@
         </nav>
     </header>
 
-    <!-- MAIN -->
     <main>
-        <!-- HERO -->
         <section class="hero">
-        <h1>Aprenda Matemática no seu ritmo e de forma autodidata</h1>
-        <p>Videoaulas, listas e apostilas para você estudar com autonomia, clareza e organização.</p>
-        <a href="#aulas" class="cta-btn">Começar agora</a>
+            <h1>Aprenda Matemática no seu ritmo e de forma autodidata</h1>
+            <p>Estude com apostilas, vídeos e exercícios — do básico ao avançado, por um valor único e vitalício.</p>
+            <a href="#aulas" class="cta-btn">Começar agora</a>
         </section>
 
-        <!-- DESTAQUES -->
         <section class="recursos">
-        <div class="card">
-            <h2>Aulas</h2>
-            <p>Assista às aulas passo a passo, com explicações simples e diretas.</p>
-        </div>
-        <div class="card">
-            <h2>Listas</h2>
-            <p>Resolva exercícios organizados por tema, com dificuldade crescente.</p>
-        </div>
-        <div class="card">
-            <h2>Apostilas</h2>
-            <p>Baixe resumos e materiais para estudar mesmo offline.</p>
-        </div>
+            <div class="card">
+                <h2>Aulas</h2>
+                <p>Assista às aulas de matemática do básico ao avançado num só lugar.</p>
+            </div>
+            <div class="card">
+                <h2>Listas</h2>
+                <p>Resolva exercícios organizados por tema, com dificuldade crescente.</p>
+            </div>
+            <div class="card">
+                <h2>Apostilas</h2>
+                <p>Baixe apostilas de todos os conteúdos abordados nas aulas.</p>
+            </div>
         </section>
 
-        <!-- SOBRE -->
+        <section class="video-fundo">
+            <video autoplay muted loop playsinline>
+                <source src="videos/aula.mp4" type="video/mp4" />
+                Seu navegador não suporta vídeo em HTML5.
+            </video>
+        </section>
+
         <section class="sobre">
-        <h2>Por que o Desenrola Matemática?</h2>
-        <p>Sou professor e criei esse espaço para quem estuda sozinho. Tudo aqui foi feito com carinho para facilitar sua jornada com a matemática — sem enrolação.</p>
+            <h2>Por que o Desenrola Matemática?</h2>
+            <p>Sou professor e criei esse espaço para quem estuda sozinho. Tudo aqui foi feito com carinho para
+                facilitar sua jornada com a matemática — sem enrolação.</p>
+            <br><a href="#aulas" class="cta-btn">Conhecer o projeto</a>
         </section>
 
-        <!-- CTA FINAL -->
-        <section class="cta-final">
-        <h2>Pronto para desenrolar a matemática?</h2>
-        <a href="#aulas" class="cta-btn grande">Comece agora</a>
-        </section>
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Desenrola Matemática</h3>
+                    <p>Email: contato@desenrolamatematica.com</p>
+                    <p>Instagram: @desenrola.matematica</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Sobre</a>
+                </div>
+            </div>
+
+            <div class="footer-copy">
+                <p>&copy; 2025 Desenrola Matemática. Todos os direitos reservados.</p>
+            </div>
+        </footer>
     </main>
 
-
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
+
 </html>
