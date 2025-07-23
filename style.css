@@ -10,6 +10,10 @@
   --cor-preto-translucido: rgba(0, 0, 0, 0.05);
 }
 
+a {
+  text-decoration: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -89,21 +93,19 @@ header.scrolled .logo img {
 }
 
 .content-btn {
-  background: none;
+  background-color: var(--cor-amarelo);
+  color: var(--cor-azul-escuro);
+  font-weight: 700;
   border: none;
-  font-size: 16px;
-  color: var(--cor-branco);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  padding: 4px 8px;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px var(--cor-preto-translucido);
+  transition: background 0.3s, transform 0.2s;
 }
 
 .content-btn:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+  background-color: var(--cor-amarelo-hover);
 }
 
 .content {
@@ -139,12 +141,13 @@ header.scrolled .logo img {
 .cta-btn {
   background-color: var(--cor-amarelo);
   color: var(--cor-azul-escuro);
-  font-weight: 600;
-  padding: 12px 24px;
+  font-weight: 700;
   border: none;
   border-radius: 999px;
-  text-decoration: none;
-  transition: background 0.3s;
+  padding: 10px 20px;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px var(--cor-preto-translucido);
+  transition: background 0.3s, transform 0.2s;
 }
 
 .cta-btn:hover {
@@ -269,12 +272,26 @@ header.scrolled .logo img {
 
 /* Responsivo */
 @media (max-width: 768px) {
+  .free-banner {
+    font-size: 0.75rem;  
+  }
+
+  main {
+    padding-top: 160px; /* aumenta o espaço caso o header cresça no mobile */
+  }
+
   header {
     flex-direction: column;
     align-items: center;
     padding: 12px 16px;
     text-align: center;
+    top: 38px;
   }
+
+  header.scrolled {
+  padding: 12px 16px;
+  background-color: var(--cor-azul-claro);
+}
 
   .logo {
     justify-content: center;
@@ -282,16 +299,31 @@ header.scrolled .logo img {
     margin-bottom: 12px;
   }
 
+  .logo img {
+  height: 50px;
+}
+
+header.scrolled .logo img {
+  height: 50px;
+}
+
+.header-buttons {
+  align-items: center;
+  width: 100%;
+}
+
+.content-btn {
+  width: 80%;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+}
+
   .header-buttons {
     flex-direction: column;
     align-items: center;
     width: 100%;
     gap: 8px;
-  }
-
-  .content-btn, .cta-btn {
-    width: 100%;
-    text-align: center;
   }
 
   .hero {
@@ -334,7 +366,7 @@ header.scrolled .logo img {
   }
 
   .sobre {
-    padding: 40px 16px;
+    padding: 40px 2px;
   }
 
   .sobre h2 {
