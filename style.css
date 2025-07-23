@@ -271,15 +271,27 @@ header.scrolled .logo img {
 @media (max-width: 768px) {
   header {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 16px;
+    align-items: center;
+    padding: 12px 16px;
+    text-align: center;
+  }
+
+  .logo {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 12px;
   }
 
   .header-buttons {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    width: 100%;
     gap: 8px;
-    margin-top: 12px;
+  }
+
+  .content-btn, .cta-btn {
+    width: 100%;
+    text-align: center;
   }
 
   .hero {
