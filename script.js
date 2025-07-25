@@ -1,9 +1,8 @@
 const header = document.getElementById('main-header');
 const logo = document.getElementById('logo-img');
 
-// Caminhos das logos
-const logoNormal = 'images/logo-branca.png';     // Logo grande
-const logoScroll = 'images/logo-azul.png';   // Ícone pequeno
+const logoNormal = 'images/logo-branca.png';
+const logoScroll = 'images/logo-azul.png';
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
