@@ -120,6 +120,7 @@ header.scrolled {
 
 /* Seções */
 .hero {
+  margin-top: 47px;
   width: 100%;
   padding: 60px 24px;
   background-color: var(--cor-azul-escuro);
@@ -256,6 +257,38 @@ header.scrolled {
   margin-top: 30px;
   font-size: 13px;
   opacity: 0.8;
+}
+
+/* Página: Conhecer o Projeto */
+.hero--conhecer {
+  background: linear-gradient(to right, #334155, #1e293b);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero--conhecer h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero--conhecer p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+section.projeto {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+section.projeto h2 {
+  font-size: 2rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
 }
 
 /* Responsivo */
