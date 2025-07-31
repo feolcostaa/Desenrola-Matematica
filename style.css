@@ -126,7 +126,7 @@ header.scrolled {
 /* Seções */
 .hero {
   width: 100%;
-  padding-top: 55px;
+  padding-top: 80px;
   padding-bottom: 25px;
   padding-left: 24px;
   padding-right: 24px;
@@ -298,6 +298,10 @@ section.projeto h2 {
   margin-bottom: 1rem;
 }
 
+.projeto p{
+  text-align: justify;
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
   .free-banner {
@@ -339,7 +343,7 @@ section.projeto h2 {
   }
 
   .hero {
-    padding-top: 90px;
+    padding-top: 110px;
     padding-left: 16px;
     padding-right: 16px;
   }
