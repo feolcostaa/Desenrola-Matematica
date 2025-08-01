@@ -54,6 +54,13 @@ a {
   padding: 14px 28px;
 }
 
+.btn.disabled {
+  background-color: gray;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+
 .visually-hidden {
   position: absolute;
   width: 1px;
