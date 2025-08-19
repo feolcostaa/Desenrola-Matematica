@@ -4,66 +4,75 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Conhecer o Projeto - Desenrola Matemática</title>
+    <title>Conheça o Projeto - Desenrola Matemática</title>
     <meta name="description"
-        content="Saiba mais sobre o Desenrola Matemática: nossa missão, visão e valores que tornam este projeto único e gratuito." />
+        content="Saiba mais sobre o Desenrola Matemática: nossa missão, visão e valores que tornam este projeto único e gratuito.">
     <link rel="icon" type="image/png" href="images/icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div class="free-banner" id="free-banner">
-        <strong>100% GRATUITO!</strong> Todo o conteúdo é aberto e sem custos
+    <div class="free-banner">
+        <strong>100% GRATUITO!</strong> Todo o conteúdo é aberto e sem custos.
     </div>
 
-    <header id="main-header">
-        <div class="logo">
-            <a href="/index"><img id="logo-img" src="images/logo-branca.png" alt="Logo Desenrola Matemática" /></a>
-        </div>
-        <nav class="header-buttons">
-            <a href="/aulas" class="btn">Conteúdo já disponível</a>
-            <a href="/" class="btn">Aulas particulares</a>
+<header class="main-header" id="main-header">
+    <div class="header-content">
+        <a href="index.html" class="logo">
+            <img id="logo-img" 
+                 src="images/logo-branca.png" 
+                 data-logo-normal="images/logo-branca.png" 
+                 data-logo-scrolled="images/logo-azul.png" 
+                 alt="Logo Desenrola Matemática" />
+        </a>
+        <nav class="header-nav">
+            <a href="aulas.html" class="btn">Aulas</a>
+            <a href="listas.html" class="btn">Listas</a>
+            <a href="apostilas.html" class="btn">Apostilas</a>
+            <a href="sobre.html" class="btn">Sobre</a>
         </nav>
-    </header>
+    </div>
+</header>
 
     <main>
-        <section class="hero ">
+        <section class="hero">
             <h1>Conheça o Desenrola Matemática</h1>
         </section>
 
-        <section class="projeto">
-            <div style="text-align: center; margin-bottom: 1.5rem;">
-                <img src="images/felipe.jpg" alt="Foto de Felipe"
-                    style="max-width: 180px; border-radius: 20%; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+        <section class="about-page">
+            <div class="profile-image">
+                <img src="images/felipe.jpg" alt="Foto de Felipe, criador do projeto" loading="lazy" />
             </div>
+
             <h2>Quem eu sou</h2>
             <p>Meu nome é Felipe, sou formado em Matemática pela USP e também estudante de Programação. Atualmente, atuo
                 como professor de Matemática na rede privada de ensino, em São Paulo, e dou aulas particulares nas horas
                 vagas. Criei este projeto com muito carinho, com o objetivo de compartilhar conhecimento de forma
                 acessível e gratuita. Espero, de coração, que o conteúdo aqui disponibilizado seja útil e faça a
-                diferença na sua jornada de aprendizado.
-            </p>
+                diferença na sua jornada de aprendizado.</p>
+
             <h2>Como surgiu o projeto</h2>
-            <p>
-                O projeto surgiu a partir de um serviço prestado para o <a href="https://programasalvaguarda.com.br/"
-                    target="_blank">Programa Salvaguarda</a>, onde ministrei um minicurso de
-                matemática básica. Durante essa experiência, fui responsável por planejar as aulas, prepará-las, montar
-                listas de exercícios e produzir apostilas — tudo em colaboração com a professora Laís, que me auxiliou
-                nesse processo. Essa vivência despertou em mim o impulso de continuar o trabalho, criando algo
-                totalmente autoral, feito do zero e, acima de tudo, gratuito. Acredito que a educação de qualidade deve
-                ser acessível a todos, e este projeto é uma tentativa concreta de tornar isso possível.
-            </p>
+            <p>O projeto surgiu a partir de um serviço prestado para o <a href="https://programasalvaguarda.com.br/"
+                    target="_blank">Programa Salvaguarda</a>, onde ministrei um minicurso de matemática básica. Durante
+                essa experiência, fui responsável por planejar as aulas, prepará-las, montar listas de exercícios e
+                produzir apostilas — tudo em colaboração com a professora Laís, que me auxiliou nesse processo. Essa
+                vivência despertou em mim o impulso de continuar o trabalho, criando algo totalmente autoral, feito do
+                zero e, acima de tudo, gratuito. Acredito que a educação de qualidade deve ser acessível a todos, e este
+                projeto é uma tentativa concreta de tornar isso possível.</p>
+
             <h2>Como funciona</h2>
-            <p>
-                O Desenrola Matemática é um projeto totalmente gratuito, voltado para quem deseja estudar de forma
+            <p>O Desenrola Matemática é um projeto totalmente gratuito, voltado para quem deseja estudar de forma
                 autônoma e acessível. As aulas são gravadas e organizadas em cursos temáticos — como o curso de
                 matemática básica, já disponível — e ficarão todas hospedadas no canal oficial do YouTube, para que você
                 possa assistir quando e quantas vezes quiser. Cada aula é acompanhada por uma lista de exercícios
                 específica, e ao final de cada módulo, há também listas focadas em vestibulares, compostas por questões
                 reais sobre o tema estudado. A ideia é que, com o tempo, o projeto continue crescendo, sendo
-                constantemente alimentado com novos conteúdos de qualidade.
-            </p>
+                constantemente alimentado com novos conteúdos de qualidade.</p>
         </section>
     </main>
 
@@ -75,12 +84,13 @@
                 <p>Instagram: <a href="https://www.instagram.com/desenrola.matematica/"
                         target="_blank">@desenrola.matematica</a></p>
             </div>
-
-            <div class="footer-copy">
-                <p>&copy; 2025 Desenrola Matemática. Todos os direitos reservados.</p>
-            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2025 Desenrola Matemática. Todos os direitos reservados.</p>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="script.js" defer></script>
 </body>
 
 </html>

@@ -8,24 +8,36 @@
   <meta name="description"
     content="Apostilas organizadas por módulo. Baixe gratuitamente o material de apoio das aulas do Desenrola Matemática.">
   <link rel="icon" type="image/png" href="images/icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="free-banner" id="free-banner">
-    <strong>100% GRATUITO!</strong> Todo o conteúdo é aberto e sem custos
+  <div class="free-banner">
+    <strong>100% GRATUITO!</strong> Todo o conteúdo é aberto e sem custos.
   </div>
 
-  <header id="main-header">
-    <div class="logo">
-      <a href="/index"><img id="logo-img" src="images/logo-branca.png" alt="Logo Desenrola Matemática" /></a>
+<header class="main-header" id="main-header">
+    <div class="header-content">
+        <a href="index.html" class="logo">
+            <img id="logo-img" 
+                 src="images/logo-branca.png" 
+                 data-logo-normal="images/logo-branca.png" 
+                 data-logo-scrolled="images/logo-azul.png" 
+                 alt="Logo Desenrola Matemática" />
+        </a>
+        <nav class="header-nav">
+            <a href="aulas.html" class="btn">Aulas</a>
+            <a href="listas.html" class="btn">Listas</a>
+            <a href="apostilas.html" class="btn">Apostilas</a>
+            <a href="sobre.html" class="btn">Sobre</a>
+        </nav>
     </div>
-    <nav class="header-buttons">
-      <a href="/aulas" class="btn">Conteúdo já disponível</a>
-      <a href="/" class="btn">Aulas particulares</a>
-    </nav>
-  </header>
+</header>
 
   <main>
     <section class="hero">
@@ -33,21 +45,21 @@
       <p>Material complementar para acompanhar o conteúdo das aulas.</p>
     </section>
 
-    <section class="recursos">
-      <div class="card">
-        <h2>Matemática Básica</h2>
-
-        <ul style="list-style: none; padding-left: 0; margin-top: 16px;">
-          <li style="padding: 5px;"><a href="#" class="btn disabled">Apostila 1</a></li>
-          <li style="padding: 5px"><a href="#" class="btn disabled">Apostila 2</a></li>
-          <!-- Adicione mais conforme necessário -->
-        </ul>
-      </div>
-      <div class="card">
-        <h2>Álgebra</h2>
-        <ul style="list-style: none; padding-left: 0; margin-top: 16px;">
-          <li><a href="/" class="btn disabled">Apostila 1</a></li>
-        </ul>
+    <section class="features">
+      <div class="features-grid">
+        <article class="card">
+          <h2>Matemática Básica</h2>
+          <ul class="card-list">
+            <li><a href="#" class="btn disabled">Apostila 1</a></li>
+            <li><a href="#" class="btn disabled">Apostila 2</a></li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Álgebra</h2>
+          <ul class="card-list">
+            <li><a href="#" class="btn disabled">Apostila 1</a></li>
+          </ul>
+        </article>
       </div>
     </section>
   </main>
@@ -61,13 +73,5 @@
             target="_blank">@desenrola.matematica</a></p>
       </div>
     </div>
-
     <div class="footer-copy">
-      <p>&copy; 2025 Desenrola Matemática. Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-
-</html>
+      <p>&copy; 2025 Desenrola Matemática. Todos os direitos

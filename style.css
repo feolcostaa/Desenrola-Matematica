@@ -1,13 +1,17 @@
+/* ==========================================================================
+   1. CONFIGURAÇÃO GLOBAL E VARIÁVEIS
+   ========================================================================== */
 :root {
-  --cor-azul-escuro: #1E3A8A;
-  --cor-azul-claro: #3B82F6;
-  --cor-amarelo: #FACC15;
-  --cor-amarelo-hover: #fcd34d;
-  --cor-cinza-claro: #f1f5f9;
-  --cor-cinza-fundo: #f9fafb;
-  --cor-texto-escuro: #374151;
-  --cor-branco: #ffffff;
-  --cor-preto-translucido: rgba(0, 0, 0, 0.05);
+  --color-primary-dark: #1E3A8A;
+  --color-primary-light: #3B82F6;
+  --color-accent: #FACC15;
+  --color-accent-hover: #fcd34d;
+  --color-background-light: #f1f5f9;
+  --color-background-body: #f9fafb;
+  --color-text-dark: #374151;
+  --color-white: #ffffff;
+  --shadow-sm: rgba(0, 0, 0, 0.05);
+  --shadow-md: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -18,35 +22,41 @@
 
 html,
 body {
-  max-width: 100%;
+  width: 100%;
   overflow-x: hidden;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--cor-cinza-fundo);
+  background-color: var(--color-background-body);
+  color: var(--color-text-dark);
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
-/* Componentes reutilizáveis */
+/* ==========================================================================
+   2. COMPONENTES REUTILIZÁVEIS
+   ========================================================================== */
 .btn {
   display: inline-block;
-  background-color: var(--cor-amarelo);
-  color: var(--cor-azul-escuro);
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
   font-weight: 700;
   border: none;
   border-radius: 999px;
   padding: 10px 20px;
   font-size: 1rem;
-  box-shadow: 0 2px 4px var(--cor-preto-translucido);
-  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px var(--shadow-sm);
+  transition: background-color 0.3s, transform 0.2s;
+  text-align: center;
 }
 
 .btn:hover {
-  background-color: var(--cor-amarelo-hover);
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
 }
 
 .btn--cta {
@@ -55,11 +65,11 @@ a {
 }
 
 .btn.disabled {
-  background-color: gray;
+  background-color: #bdc3c7;
+  color: #7f8c8d;
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.8;
 }
-
 
 .visually-hidden {
   position: absolute;
@@ -73,10 +83,15 @@ a {
   border: 0;
 }
 
-/* Layout */
+/* ==========================================================================
+   3. LAYOUT (BANNER, HEADER, FOOTER)
+   ========================================================================== */
+/* ==========================================================================
+   3. LAYOUT (BANNER, HEADER, FOOTER)
+   ========================================================================== */
 .free-banner {
-  background-color: var(--cor-amarelo);
-  color: var(--cor-azul-escuro);
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
   text-align: center;
   padding: 10px 16px;
   font-size: 1rem;
@@ -86,37 +101,41 @@ a {
   left: 0;
   right: 0;
   z-index: 1001;
-  box-shadow: 0 2px 4px var(--cor-preto-translucido);
+  transition: transform 0.4s ease-in-out; /* Transição suave */
 }
 
-main {
-  padding-top: calc(40px + 60px);
+/* Nova classe para ocultar o banner */
+.free-banner.hidden {
+  transform: translateY(-100%);
 }
 
-header {
+.main-header {
   position: fixed;
   width: 100%;
-  top: 45px;
+  top: 44px; /* Altura do banner */
   left: 0;
-  background-color: var(--cor-azul-escuro);
-  color: var(--cor-branco);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
   padding: 20px 32px;
-  box-shadow: 0 2px 4px var(--cor-preto-translucido);
+  box-shadow: 0 2px 4px var(--shadow-sm);
   transition: all 0.3s ease;
   z-index: 1000;
 }
 
-header.scrolled {
+.main-header.scrolled {
+  top: 0; /* Agora funciona, pois o banner estará oculto */
   padding: 10px 24px;
-  background-color: var(--cor-azul-claro);
+  background-color: var(--color-white);
+  color: var(--color-primary-dark);
+  box-shadow: 0 4px 6px var(--shadow-md);
 }
 
-.logo {
+.header-content {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo img {
@@ -124,25 +143,55 @@ header.scrolled {
   transition: height 0.3s;
 }
 
-.header-buttons {
+.header-nav {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-/* Seções */
+main {
+  padding-top: 130px;
+  /* Espaço para banner e header */
+}
+
+.site-footer {
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+  padding: 40px 24px 20px;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.footer-info a {
+  text-decoration: underline;
+}
+
+.footer-info a:hover {
+  color: var(--color-accent);
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 30px;
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   4. SEÇÕES DAS PÁGINAS
+   ========================================================================== */
 .hero {
-  width: 100%;
-  padding-top: 80px;
-  padding-bottom: 25px;
-  padding-left: 24px;
-  padding-right: 24px;
-  background-color: var(--cor-azul-escuro);
-  color: var(--cor-branco);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  padding: 80px 24px 40px;
   text-align: center;
 }
 
@@ -153,44 +202,73 @@ header.scrolled {
 
 .hero p {
   font-size: 1.1rem;
-  margin-bottom: 32px;
   max-width: 600px;
+  margin: 0 auto;
 }
 
-.recursos {
+.features {
+  padding: 40px 24px;
+  background-color: var(--color-background-light);
+}
+
+.features-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  padding: 30px 24px;
-  background-color: var(--cor-cinza-claro);
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .card {
-  background-color: var(--cor-branco);
+  background-color: var(--color-white);
   padding: 24px;
   border-radius: 16px;
-  box-shadow: 0 2px 8px var(--cor-preto-translucido);
-  max-width: 340px;
-  flex: 1;
+  box-shadow: 0 2px 8px var(--shadow-sm);
+  width: 340px;
+  flex: 1 1 300px;
+  /* Flexbox para responsividade */
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px var(--shadow-md);
 }
 
 .card h2 {
   font-size: 1.5rem;
-  color: var(--cor-azul-escuro);
+  color: var(--color-primary-dark);
   margin-bottom: 12px;
 }
 
-.card p {
-  color: var(--cor-texto-escuro);
-  font-size: 0.95rem;
+.card .btn {
+  margin-top: 16px;
 }
 
-.video-fundo {
+/* Adicione este bloco ao seu style.css */
+
+.card-subtitle {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: var(--color-primary-dark);
+  font-size: 1.1rem;
+}
+
+.card-list {
+  list-style: none; /* Remove a bolinha */
+  padding: 0;
+  margin: 0;
+}
+
+.card-list li {
+  padding: 5px 0; /* Adiciona um espaçamento vertical */
+}
+
+.video-promo {
   padding: 40px 24px;
-  background-color: var(--cor-cinza-claro);
-  text-align: center;
+  background-color: var(--color-background-light);
 }
 
 .video-container {
@@ -198,7 +276,7 @@ header.scrolled {
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px var(--cor-preto-translucido);
+  box-shadow: 0 4px 12px var(--shadow-md);
 }
 
 .video-container video {
@@ -207,152 +285,97 @@ header.scrolled {
   display: block;
 }
 
-.sobre {
+.about-promo {
   padding: 60px 24px;
   text-align: center;
 }
 
-.sobre h2 {
+.about-promo h2 {
   font-size: 2rem;
-  color: var(--cor-azul-escuro);
+  color: var(--color-primary-dark);
   margin-bottom: 24px;
 }
 
-.sobre p {
-  max-width: 60%;
-  margin: 0 auto 32px;
-  color: var(--cor-texto-escuro);
-  font-size: 1.1rem;
-}
-
-/* Footer */
-.site-footer {
-  background-color: var(--cor-azul-claro);
-  color: var(--cor-branco);
-  padding: 40px 24px 20px;
-  font-size: 14px;
-}
-
-.footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1000px;
-  margin: 0 auto;
-  gap: 24px;
-}
-
-.footer-info h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.footer-info p {
-  margin: 4px 0;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.footer-links a {
-  color: var(--cor-branco);
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--cor-amarelo);
-}
-
-.footer-copy {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 13px;
-  opacity: 0.8;
-}
-
-/* Página: Conhecer o Projeto */
-.hero--conhecer {
-  background: linear-gradient(to right, #334155, #1e293b);
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.hero--conhecer h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero--conhecer p {
-  font-size: 1.2rem;
+.about-promo p {
   max-width: 700px;
-  margin: 0 auto;
+  /* Melhor que porcentagem */
+  margin: 0 auto 32px;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
-section.projeto {
+/* Página Sobre */
+.about-page {
   padding: 3rem 2rem;
   max-width: 900px;
   margin: 0 auto;
   line-height: 1.7;
 }
 
-section.projeto h2 {
+.about-page h2 {
   font-size: 2rem;
-  color: #1e293b;
+  color: var(--color-primary-dark);
+  margin: 2rem 0 1rem;
+}
+
+.about-page p {
+  text-align: justify;
   margin-bottom: 1rem;
 }
 
-.projeto p {
-  text-align: justify;
+.profile-image {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-/* Responsivo */
+.profile-image img {
+  max-width: 180px;
+  border-radius: 20%;
+  box-shadow: 0 2px 8px var(--shadow-md);
+}
+
+
+/* ==========================================================================
+   5. MEDIA QUERIES (RESPONSIVO)
+   ========================================================================== */
 @media (max-width: 768px) {
   .free-banner {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    padding: 8px 12px;
   }
 
-  main {
-    padding-top: calc(40px + 100px);
+  .main-header {
+    top: 32px;
+    /* Nova altura do banner */
+    padding: 12px 16px;
   }
 
-  header {
+  .header-content {
     flex-direction: column;
-    padding: 12px 16px;
-    top: 38px;
+    gap: 12px;
   }
 
-  header.scrolled {
+  .main-header.scrolled {
     padding: 12px 16px;
-  }
-
-  .logo {
-    margin-bottom: 0;
-    padding-bottom: 10px;
   }
 
   .logo img {
     height: 50px;
   }
 
-  .header-buttons {
-    flex-direction: column;
+  .header-nav {
     width: 100%;
-    gap: 8px;
+    justify-content: center;
   }
 
-  .btn {
-    width: 100%;
-    text-align: center;
+  .header-nav .btn {
+    flex-grow: 1;
+    /* Ocupa espaço igual */
   }
 
-  .hero {
-    padding-top: 110px;
-    padding-left: 16px;
-    padding-right: 16px;
+  main {
+    padding-top: 170px;
+    /* Novo espaço para header mobile */
   }
 
   .hero h1 {
@@ -361,47 +384,20 @@ section.projeto h2 {
 
   .hero p {
     font-size: 1rem;
-    max-width: 90%;
   }
 
-  .recursos {
+  .features-grid {
     flex-direction: column;
     align-items: center;
-    padding: 24px 16px;
   }
 
   .card {
     width: 100%;
-    box-shadow: none;
+    max-width: 380px;
   }
 
-  .video-fundo {
-    padding: 24px 16px;
-  }
-
-  .video-container {
-    border-radius: 8px;
-  }
-
-  .sobre {
-    padding: 40px 16px;
-  }
-
-  .sobre h2 {
-    font-size: 1.5rem;
-  }
-
-  .sobre p {
+  .about-promo p {
     font-size: 1rem;
-    max-width: 90%;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .site-footer {
-    padding: 32px 16px;
+    max-width: 95%;
   }
 }

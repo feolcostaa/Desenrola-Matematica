@@ -8,69 +8,80 @@
     <meta name="description"
         content="Desenrola Matemática: estude com vídeos, animações em GeoGebra, apostilas e listas. Tudo grátis! Aulas particulares também disponíveis.">
     <link rel="icon" type="image/png" href="images/icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div class="free-banner" id="free-banner">
-        <strong>100% GRATUITO!</strong> Todo o conteúdo é aberto e sem custos
+    <div class="free-banner">
+        <strong>100% GRATUITO!</strong> Todo o conteúdo é aberto e sem custos.
     </div>
 
-    <header id="main-header">
-        <div class="logo">
-            <img id="logo-img" src="images/logo-branca.png" alt="Logo Desenrola Matemática" />
+    <header class="main-header" id="main-header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img id="logo-img" src="images/logo-branca.png" data-logo-normal="images/logo-branca.png"
+                    data-logo-scrolled="images/logo-azul.png" alt="Logo Desenrola Matemática" />
+            </a>
+            <nav class="header-nav">
+                <a href="aulas.html" class="btn">Aulas</a>
+                <a href="listas.html" class="btn">Listas</a>
+                <a href="apostilas.html" class="btn">Apostilas</a>
+                <a href="sobre.html" class="btn">Sobre</a>
+            </nav>
         </div>
-        <nav class="header-buttons">
-            <a href="/aulas" class="btn">Conteúdo já disponível</a>
-            <a href="/" class="btn">Aulas particulares</a>
-        </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Aprenda Matemática no seu ritmo e de forma autodidata</h1>
-            <p>Estude do básico ao avançado. Tudo 100% <strong>gratuito</strong>!</p>
-
+            <div class="hero-content">
+                <h1>Aprenda Matemática no seu ritmo e de forma autodidata</h1>
+                <p>Estude do básico ao avançado. Tudo 100% <strong>gratuito</strong>!</p>
+            </div>
         </section>
 
-        <section class="recursos">
-            <a href="/aulas">
-                <div class="card">
-                    <h2>Aulas</h2>
-                    <p>Assista às aulas de matemática do básico ao avançado num só lugar.</p>
-                </div>
-            </a>
-            <a href="/listas">
-                <div class="card">
-                    <h2>Listas</h2>
-                    <p>Resolva exercícios organizados por tema, com dificuldade crescente.</p>
-                </div>
-            </a>
-            <a href="/apostilas">
-                <div class="card">
-                    <h2>Apostilas</h2>
-                    <p>Baixe apostilas de todos os conteúdos abordados nas aulas.</p>
-                </div>
-            </a>
+        <section class="features">
+            <div class="features-grid">
+                <a href="aulas.html" class="card-link">
+                    <article class="card">
+                        <h2>Aulas</h2>
+                        <p>Assista às aulas de matemática do básico ao avançado num só lugar.</p>
+                    </article>
+                </a>
+                <a href="listas.html" class="card-link">
+                    <article class="card">
+                        <h2>Listas</h2>
+                        <p>Resolva exercícios organizados por tema, com dificuldade crescente.</p>
+                    </article>
+                </a>
+                <a href="apostilas.html" class="card-link">
+                    <article class="card">
+                        <h2>Apostilas</h2>
+                        <p>Baixe apostilas de todos os conteúdos abordados nas aulas.</p>
+                    </article>
+                </a>
+            </div>
         </section>
 
-        <section class="video-fundo">
+        <section class="video-promo">
             <div class="video-container">
-                <h2 class="visually-hidden">Demonstração de aula</h2>
-                <video autoplay muted loop playsinline>
+                <h2 class="visually-hidden">Demonstração de aula em vídeo</h2>
+                <video autoplay muted loop playsinline poster="images/felipe.jpg">
                     <source src="videos/aula.mp4" type="video/mp4" />
-                    Seu navegador não suporta vídeo em HTML5.
+                    Seu navegador não suporta o formato de vídeo.
                 </video>
             </div>
         </section>
 
-        <section class="sobre">
+        <section class="about-promo">
             <h2>Por que o Desenrola Matemática?</h2>
-            <p>Sou professor e criei esse espaço para quem estuda sozinho. Com vídeos, animações para facilitar a
-                visualiação e apostilas, tudo aqui foi feito com carinho para facilitar sua jornada — sem enrolação e
-                sem custo.</p>
-            <a href="/sobre" class="btn btn--cta">Conhecer o projeto</a>
+            <p>Sou professor e criei esse espaço para quem estuda sozinho. Com vídeos, animações e apostilas, tudo aqui
+                foi feito com carinho para facilitar sua jornada — sem enrolação e sem custo.</p>
+            <a href="sobre.html" class="btn btn--cta">Conhecer o projeto</a>
         </section>
     </main>
 
@@ -83,12 +94,12 @@
                         target="_blank">@desenrola.matematica</a></p>
             </div>
         </div>
-
         <div class="footer-copy">
             <p>&copy; 2025 Desenrola Matemática. Todos os direitos reservados.</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="script.js" defer></script>
 </body>
 
 </html>
