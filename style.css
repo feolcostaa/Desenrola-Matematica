@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
 /* ==========================================================================
    1. CONFIGURAÇÃO GLOBAL E VARIÁVEIS
    ========================================================================== */
@@ -20,10 +25,19 @@
   box-sizing: border-box;
 }
 
-html,
+html {
+  scrollbar-width: none; /* Para Firefox */
+}
+
 body {
+  overflow-y: auto;   /* Garante a rolagem quando necessário */
+  overflow-x: hidden; /* Evita rolagem horizontal */
   width: 100%;
-  overflow-x: hidden;
+  -ms-overflow-style: none; /* Para IE e Edge antigos */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Para Chrome, Safari, etc. */
 }
 
 body {
@@ -83,9 +97,6 @@ a {
   border: 0;
 }
 
-/* ==========================================================================
-   3. LAYOUT (BANNER, HEADER, FOOTER)
-   ========================================================================== */
 /* ==========================================================================
    3. LAYOUT (BANNER, HEADER, FOOTER)
    ========================================================================== */
@@ -401,3 +412,4 @@ main {
     max-width: 95%;
   }
 }
+      
