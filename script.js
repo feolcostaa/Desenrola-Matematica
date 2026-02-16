@@ -1,24 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('main-header');
-    const logo = document.getElementById('logo-img');
     const banner = document.querySelector('.free-banner');
     const nav = document.querySelector('.header-nav');
     const headerContent = document.querySelector('.header-content');
 
-    if (!header || !logo || !banner) return;
-
-    const logoNormalSrc = logo.getAttribute('data-logo-normal');
-    const logoScrolledSrc = logo.getAttribute('data-logo-scrolled');
-
-    const handleScroll = () => {
-        const isScrolled = window.scrollY > 50;
-        
-        header.classList.toggle('scrolled', isScrolled);
-        banner.classList.toggle('hidden', isScrolled);
-        logo.src = isScrolled ? logoScrolledSrc : logoNormalSrc;
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    if (!header || !banner) return;
 
     const hamburger = document.createElement('button');
     hamburger.className = 'hamburger';
