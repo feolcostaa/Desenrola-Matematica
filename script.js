@@ -35,3 +35,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function ajustarLayout() {
+    const banner = document.querySelector('.free-banner');
+    const header = document.getElementById('main-header');
+    const main = document.querySelector('main');
+
+    if (banner && header && main) {
+        const hBanner = banner.offsetHeight;
+        const hHeader = header.offsetHeight;
+
+        // 1. Cola o header no banner
+        header.style.top = `${hBanner}px`;
+
+        // 2. Empurra o conteúdo para baixo EXATAMENTE o tamanho do topo fixo
+        // Isso remove o gap visual
+        main.style.paddingTop = `${hBanner + hHeader}px`;
+    }
+}
+
+window.addEventListener('load', ajustarLayout);
+window.addEventListener('resize', ajustarLayout);

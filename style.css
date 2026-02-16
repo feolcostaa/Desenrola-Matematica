@@ -196,10 +196,6 @@ a {
   gap: 16px;
 }
 
-main {
-  padding-top: 130px;
-}
-
 /* SEÇÕES */
 
 .hero {
@@ -534,10 +530,6 @@ main {
 
   .logo img {
     height: 50px;
-  }
-
-  main {
-    padding-top: 110px;
   }
 
   .hero {
