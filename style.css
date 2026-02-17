@@ -1,4 +1,4 @@
-* ,
+*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -244,6 +244,7 @@ a {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -476,6 +477,7 @@ a {
   .hero h1 {
     font-size: 2.3rem;
   }
+
   .features-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 28px;
@@ -483,73 +485,90 @@ a {
 }
 
 @media (max-width: 768px) {
+  /* Ajuste do Banner Promocional */
   .free-banner {
     font-size: 0.85rem;
     padding: 10px 12px;
+    z-index: 1100; /* Garante que fique acima de tudo */
   }
 
+  /* Ajuste do Header */
   .main-header {
-    top: 42px;
     padding: 12px 20px;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .header-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    padding: 24px;
-    gap: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    transform: translateY(-120%);
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  .header-nav.active {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  .header-nav .btn {
-    width: 100%;
-    padding: 14px 24px;
-    font-size: 1.05rem;
-    min-height: 48px;
+    z-index: 1000;
   }
 
   .logo img {
-    height: 50px;
+    height: 45px; /* Logo um pouco menor no mobile */
   }
 
-  .hero {
-    padding: 30px 20px 30px;
+  /* Botão Hambúrguer */
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+    background: transparent;
+    border: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
   }
 
+  .hamburger span {
+    width: 28px;
+    height: 3px;
+    background-color: var(--color-white);
+    border-radius: 3px;
+    transition: all 0.3s;
+  }
+
+  /* Menu Dropdown (Não Tela Cheia) */
+  .header-nav {
+    position: absolute;
+    top: 100%; /* Começa exatamente onde o header termina */
+    left: 0;
+    width: 100%;
+    
+    background: var(--gradient-primary); /* Continuação visual do header */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Sombra para destacar */
+    border-radius: 0 0 15px 15px;
+    
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    
+    /* Estado Fechado */
+    opacity: 0;
+    visibility: hidden; /* Impede clique quando fechado */
+    transform: translateY(-20px); /* Leve deslize para cima */
+    transition: all 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  /* Estado Aberto */
+  .header-nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Ajuste dos Botões no Menu */
+  .header-nav .btn {
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); /* Fundo sutil */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+    box-shadow: none;
+  }
+  
+  /* Ajustes gerais de layout mobile */
   .hero h1 {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
-
-  .hero p {
-    font-size: 1.05rem;
-  }
-
+  
   .features-grid {
     grid-template-columns: 1fr;
-  }
-
-  .about-promo h2 {
-    font-size: 1.8rem;
   }
 }
 
@@ -557,12 +576,15 @@ a {
   .hero h1 {
     font-size: 1.6rem;
   }
+
   .hero p {
     font-size: 1rem;
   }
+
   .card h2 {
     font-size: 1.4rem;
   }
+
   .btn {
     padding: 10px 20px;
     font-size: 0.95rem;

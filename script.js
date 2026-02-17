@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.toggle('active', isActive);
             nav.classList.toggle('active', isActive);
             hamburger.setAttribute('aria-expanded', isActive);
+
+            document.body.style.overflow = isActive ? 'hidden' : 'auto';
         };
 
         hamburger.addEventListener('click', () => toggleMenu());
